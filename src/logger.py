@@ -4,7 +4,7 @@ from datetime import datetime
 
 LOG_FILE= f"{datetime.now().strftime("%m_%d_%Y_%H_%M_%S")}.log"
 logs_path= os.path.join(os.getcwd(), 'logs', LOG_FILE)
-os.mkdirs(logs_path, exist_ok=True)   # exist_ok=True means if there already exists a file keep appending the logs
+os.makedirs(logs_path, exist_ok=True)   # exist_ok=True means if there already exists a file keep appending the logs
 
 LOG_FILE_PATH= os.path.join(logs_path, LOG_FILE)
 
