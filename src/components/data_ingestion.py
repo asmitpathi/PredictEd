@@ -22,7 +22,8 @@ class DataIngestion:     # here @dataclass is not used because some functions ar
             df= pd.read_csv('notebook/data/stud.csv')    # read the dataset
             logging.info('Read the dataset as dataframe')
 
-            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok= True)   # exist_ok=True means if it is already there, we will keep the folder instead of deleting it and creating it again or returning any error
+            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok= True)   # create artifacts folder,  exist_ok=True means if it is already there, we will keep the folder instead of deleting it and creating it again or returning any error
+
             df.to_csv(self.ingestion_config.raw_data_path, index=False, header= True)   # save a copy of the original dataset
 
             logging.info('Train test split initiated')
@@ -38,7 +39,3 @@ class DataIngestion:     # here @dataclass is not used because some functions ar
             )
         except Exception as e:
             raise CustomException(e, sys)
-
-if __name__== '__main__':
-    obj= DataIngestion()
-    obj.initiate_data_ingestion()
