@@ -221,6 +221,4 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-
-Notes.txt
 predict-ed-env

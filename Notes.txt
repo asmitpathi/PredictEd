@@ -1,0 +1,35 @@
+PredictEd: Student Performance Analytics
+
+Follow this project structure template, file templates(exception, logger, etc)
+
+Follow the steps:- 
+1. setup github repo
+
+2. create an environment: conda create -p predict-ed-env python=3.12 -y 
+
+3. create setup.py, add requirements.txt and build package. 
+    1. setup.py file lets others access this ml project as a package (by finding folders containing __init__.py)(downloads all the modules and libraries in requirements.txt file)
+    2. add -e . in requirements.txt so setup.py is automatically installed and make sure to exclude it in the setup.py file because -e . means setup.py
+    3. any folder can be used by a package by storing __init__.py file in it.
+
+4. create src folder. create components folder inside src. Store all data processing files in it.
+
+5. in src, create logger.py for logging, exception.py for exception handling and utils.py for storing utility functions
+
+6. store all exceptions. also check excecution of file by using if __name__=='__main__': and then remove this specific code
+
+7. store logging infromation of all executions and exceptions. also check excecution of file by using if __name__=='__main__': and then remove this specific code
+
+8. ml workflow- part1: problem definition, data collection, data preprocessing & cleaning, EDA, feature engineering
+
+9. ml workflow- part2: model training, evaluation
+
+10. data ingestion: Read the raw dataset → Create the artifacts folder → Save the raw dataset → Split it into train and test sets → Save both and return their paths. also check excecution of file by using if __name__=='__main__': and then remove this specific code
+
+11. data transformation: Preprocess the training and testing data by handling missing values, encoding categorical features, scaling numerical features, and saving the fitted preprocessing pipeline
+
+12. model training: Train and evaluate multiple regression models, select the best-performing model based on R² score, and save it for future predictions.
+
+13. predict pipeline: Implement the prediction pipeline by preprocessing user input, loading the trained model, and generating student performance predictions.
+
+14. app.py: Create a Flask web application that collects student information, invoke the prediction pipeline, and display the predicted score.
